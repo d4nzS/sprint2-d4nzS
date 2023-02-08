@@ -9,7 +9,7 @@
     margin-top: 17px;
 
     .swiper-wrapper {
-        justify-content: center;
+        width: fit-content;
     }
 
     &__image {
@@ -19,7 +19,7 @@
         margin: 0 auto;
     }
 
-    .swiper-slide-active {
+    .swiper-slide-thumb-active {
         img {
             border: 1px solid #F83600;
             border-radius: 3px;

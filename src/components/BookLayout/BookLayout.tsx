@@ -21,8 +21,6 @@ const BookLayout: FC = () => {
     const book = BOOKS.find(book => book.id === bookId)!;
     const bookPath = BOOK_CATEGORIES.find(category => category.title === book.category)!.path;
 
-    console.log(bookPath);
-
     const toggleReviewsHandler = (): void => {
         setReviewsIsOpen(prevState => !prevState);
     };

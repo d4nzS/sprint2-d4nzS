@@ -47,7 +47,7 @@ const ImagesSliderDesktop: FC<ImagesSliderProps> = ({ images, title, parentImgSt
             >
                 {images.map((imageUrl, index) => (
                     <SwiperSlide
-                        data-test-id='slide-mini'
+                        data-test-id="slide-mini"
                         key={index}
                     >
                         <Image
