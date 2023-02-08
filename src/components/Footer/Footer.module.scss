@@ -1,0 +1,62 @@
+@use '../../assets/styles/vars' as v;
+
+@mixin create-icon($icon, $width, $height) {
+    #{'.' + $icon + '-icon'} {
+        display: block;
+        width: $width;
+        height: $height;
+        background-image: url('../../assets/images/' + $icon + '-icon.svg');
+        background-position: center center;
+    }
+}
+
+.footer {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid v.$grey-black20;
+    text-align: center;
+}
+
+.text {
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.nav {
+    margin-top: 19px;
+    display: flex;
+    justify-content: center;
+}
+
+.list {
+    width: 158px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@include create-icon('facebook', 9.9px, 18px);
+
+@include create-icon('instagram', 18px, 18px);
+
+@include create-icon('vk', 22px, 13.2px);
+
+@include create-icon('linkedin', 18px, 19px);
+
+@media (min-width: 768px) {
+    .footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav {
+        margin-top: 0;
+    }
+
+    .text {
+        display: inline;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

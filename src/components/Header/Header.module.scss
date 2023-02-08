@@ -1,0 +1,73 @@
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: none;
+    height: 40px;
+    margin-right: 120px;
+}
+
+.menu-icon {
+    margin-right: 24px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../assets/images/menu-icon.svg);
+    background-size: 100% 100%;
+    cursor: pointer;
+    display: block;
+
+    &_active {
+        background-image: url(../../assets/images/cross-icon.svg);
+    }
+
+    &_invisible {
+        display: none;
+    }
+}
+
+.title {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.user-info {
+    width: 180px;
+    margin-left: auto;
+    display: none;
+    font-weight: 600;
+
+    &__avatar {
+        width: 58px;
+        height: 58px;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .logo {
+        display: block;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,19 @@
+.swipers-container {
+    width: 445px;
+    margin-right: 30px;
+}
+
+.swiper-mini {
+    margin-top: 17px;
+
+    > div {
+        justify-content: center;
+    }
+
+    &__image {
+        cursor: pointer;
+        width: 65px;
+        height: 86px;
+        margin: 0 auto;
+    }
+}
