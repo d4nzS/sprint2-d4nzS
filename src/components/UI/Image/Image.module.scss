@@ -1,0 +1,15 @@
+@use '../../../assets/styles/vars' as v;
+
+.default-image {
+    border: 1px solid v.$grey-black40;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F9F9FA;
+}
+
+.default-icon {
+    display: block;
+    background-image: url(../../../assets/images/default-icon.svg);
+}

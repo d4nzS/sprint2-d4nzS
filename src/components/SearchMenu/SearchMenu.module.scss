@@ -1,0 +1,155 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+@mixin style-icon-container {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include m.dark-shadow;
+}
+
+.search-menu {
+    margin-bottom: 19px;
+    display: flex;
+}
+
+.form-controller {
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    height: 32px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+
+    @include m.dark-shadow;
+}
+
+.button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: white;
+    cursor: pointer;
+
+    @include style-icon-container;
+
+    &_search {
+        margin-right: 16px;
+    }
+
+    &_grid {
+        margin-left: auto;
+        margin-right: 16px;
+    }
+
+    &_active {
+        background: v.$orange-gradient;
+
+        .icon {
+            background-color: white;
+        }
+    }
+
+    &_cross {
+        box-shadow: none;
+    }
+}
+
+
+.icon {
+    width: 50%;
+    height: 50%;
+    display: block;
+    background-color: v.$grey-black40;
+
+    @each $name in search, rating, grid {
+        &_#{$name} {
+            @include m.style-svg('../../assets/images/' + $name + '-icon.svg');
+        }
+    }
+
+    &_list {
+        @include m.style-svg('../../assets/images/menu-icon.svg');
+    }
+
+    &_cross {
+        background-image: url('../../assets/images/cross-icon.svg');
+        background-position: center;
+        background-color: inherit;
+    }
+}
+
+.input {
+    border: none;
+    outline: none;
+    flex: 1 1 auto;
+    font-size: 12px;
+    line-height: 18px;
+
+    &::placeholder {
+        color: v.$grey-black40;
+    }
+}
+
+.button-text {
+    display: none;
+    color: v.$grey-black40;
+}
+
+.invisible {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .search-menu {
+        margin-bottom: 24px;
+    }
+
+    .form-controller {
+        margin-right: 16.9px;
+        width: 274px;
+        height: auto;
+    }
+
+    .button {
+        width: 38px;
+        height: 38px;
+
+        &_search {
+            width: 16px;
+            height: 16px;
+            box-shadow: none;
+            margin-right: 8px;
+            cursor: default;
+        }
+
+        &_rating {
+            width: 148.2px;
+            border-radius: 30px;
+            padding-left: 15.1px;
+            padding-right: 15.1px;
+            justify-content: space-between;
+        }
+    }
+
+    .icon {
+        &_search, &_rating {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    .button-text {
+        display: block;
+    }
+}
+
+@media (min-width: 1440px) {
+    .form-controller {
+        width: 350px;
+    }
+}
+

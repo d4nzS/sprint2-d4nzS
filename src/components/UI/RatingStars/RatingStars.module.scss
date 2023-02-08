@@ -1,0 +1,15 @@
+.rating {
+    justify-content: space-between;
+    display: flex;
+}
+
+.rating-star {
+    display: block;
+    background-image: url(../../../assets/images/filled-star-icon.svg);
+    background-size: 100% 100%;
+
+    &_empty {
+        background: url(../../../assets/images/empty-star-icon.svg);
+        background-size: 100% 100%;
+    }
+}

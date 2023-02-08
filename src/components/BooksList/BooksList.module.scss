@@ -1,0 +1,16 @@
+.books {
+    margin-bottom: 62px;
+}
+
+@media (min-width: 768px) {
+    .list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 190px);
+        justify-content: space-between;
+
+        &_list-type {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@use '../../../../assets/styles/vars' as v;
+
+.swipers-container {
+    width: 445px;
+    margin-right: 30px;
+}
+
+.swiper-mini {
+    margin-top: 17px;
+
+    .swiper-wrapper {
+        width: fit-content;
+    }
+
+    &__image {
+        cursor: pointer;
+        width: 65px;
+        height: 86px;
+        margin: 0 auto;
+    }
+
+    .swiper-slide-thumb-active {
+        img {
+            border: 1px solid #F83600;
+            border-radius: 3px;
+        }
+    }
+}
