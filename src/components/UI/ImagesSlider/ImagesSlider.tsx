@@ -21,8 +21,9 @@ const ImagesSlider: FC<ImagesSliderProps> = props => {
     return (
         <Swiper
             data-test-id="slide-big"
-            pagination={true}
-            modules={[Pagination]}
+            pagination={{
+                clickable: true
+            }}            modules={[Pagination]}
             className={classes.swiper}
             spaceBetween={30}
         >

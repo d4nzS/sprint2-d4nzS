@@ -7,7 +7,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-import classes from './ImagesSliderDesktop.module.scss';
+import './ImagesSliderDesktop..scss';
 import ImagesSliderProps from '../images-slider-interface';
 import Image from '../../Image/Image';
 
@@ -15,7 +15,7 @@ const ImagesSliderDesktop: FC<ImagesSliderProps> = ({ images, title, parentImgSt
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass>();
 
     return (
-        <div className={classes['swipers-container']}>
+        <div className="swipers-container">
             <Swiper
                 spaceBetween={10}
                 navigation={true}
@@ -26,7 +26,6 @@ const ImagesSliderDesktop: FC<ImagesSliderProps> = ({ images, title, parentImgSt
                     <SwiperSlide
                         data-test-id='slide-mini'
                         key={index}
-                        className={classes['swiper-slide']}
                     >
                         <Image
                             url={imageUrl}
@@ -44,7 +43,7 @@ const ImagesSliderDesktop: FC<ImagesSliderProps> = ({ images, title, parentImgSt
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
-                className={classes['swiper-mini']}
+                className="swiper-mini"
             >
                 {images.map((imageUrl, index) => (
                     <SwiperSlide
@@ -54,7 +53,7 @@ const ImagesSliderDesktop: FC<ImagesSliderProps> = ({ images, title, parentImgSt
                         <Image
                             url={imageUrl}
                             title={title}
-                            imgStyles={classes['swiper-mini__image']}
+                            imgStyles="swiper-mini__image"
                         />
                     </SwiperSlide>
                 ))}

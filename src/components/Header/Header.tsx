@@ -1,4 +1,5 @@
 import { FC, MouseEvent } from 'react';
+import { Link } from 'react-router-dom';
 
 import classes from './Header.module.scss';
 import logoImg from '../../assets/images/logo.svg';
@@ -18,7 +19,9 @@ const Header: FC = () => {
 
     return (
         <header className={classes.header}>
-            <img src={logoImg} alt="Logo" className={classes.logo}/>
+            <Link to="/books/all">
+                <img src={logoImg} alt="Logo" className={classes.logo}/>
+            </Link>
             <div data-test-id="button-burger">
                 <i
                     className={`${classes['menu-icon']} ${navbarIsShown ? classes['menu-icon_invisible'] : ''}`}

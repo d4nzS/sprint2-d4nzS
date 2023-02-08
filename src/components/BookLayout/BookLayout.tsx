@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import classes from './BookLayout.module.scss';
-import { BOOKS } from '../../data/data';
+import { BOOK_CATEGORIES, BOOKS } from '../../data/data';
 import Button from '../UI/Button/Button';
 import { Status } from '../../models/book';
 import createBtnText from '../../utils/create-btn-text';
@@ -19,6 +19,9 @@ const BookLayout: FC = () => {
     const [reviewsIsOpen, setReviewsIsOpen] = useState<boolean>();
 
     const book = BOOKS.find(book => book.id === bookId)!;
+    const bookPath = BOOK_CATEGORIES.find(category => category.title === book.category)!.path;
+
+    console.log(bookPath);
 
     const toggleReviewsHandler = (): void => {
         setReviewsIsOpen(prevState => !prevState);
@@ -50,7 +53,7 @@ const BookLayout: FC = () => {
             <main className={classes.main}>
                 <div className={classes['general-info']}>
                     <div className={classes['general-info__content']}>
-                        <span>{book.category}</span>
+                        <Link to={`/books/${bookPath}`}>{book.category}</Link>
                         <i className={classes['general-info__slash']}/>
                         <span>{book.title}</span>
                     </div>
